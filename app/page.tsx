@@ -52,20 +52,18 @@ export default function Home() {
               justifyContent: "center",
               boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
               marginBottom: "1rem",
+              overflow: "hidden",
             }}
           >
-            <span
+            <img
+              src="https://pub-3c670c54e508407b867016eb6efec600.r2.dev/IMG_4887.JPG"
+              alt="Logo"
               style={{
-                fontSize: "3rem",
-                fontWeight: 700,
-                background: "linear-gradient(to right, #ec4899, #8b5cf6)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                color: "transparent",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
               }}
-            >
-              L
-            </span>
+            />
           </div>
           <h1
             style={{
