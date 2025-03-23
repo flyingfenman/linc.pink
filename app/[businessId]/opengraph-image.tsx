@@ -11,13 +11,15 @@ export const size = {
 
 export const contentType = "image/png"
 
-type Props = {
-  params: {
-    businessId: string
-  }
+type BusinessPageParams = {
+  businessId: string
 }
 
-export default function Image({ params }: Props) {
+export default function Image({
+  params,
+}: {
+  params: BusinessPageParams
+}) {
   // Access params directly without awaiting
   const businessId = params.businessId
   const business = businesses[businessId]

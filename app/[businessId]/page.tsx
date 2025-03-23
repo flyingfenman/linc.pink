@@ -9,13 +9,15 @@ export function generateStaticParams() {
   }))
 }
 
-type Props = {
-  params: {
-    businessId: string
-  }
+type BusinessPageParams = {
+  businessId: string
 }
 
-export function generateMetadata({ params }: Props): Metadata {
+export function generateMetadata({
+  params,
+}: {
+  params: BusinessPageParams
+}): Metadata {
   const businessId = params.businessId
   const business = businesses[businessId]
 
@@ -31,7 +33,11 @@ export function generateMetadata({ params }: Props): Metadata {
   }
 }
 
-export default function BusinessPage({ params }: Props) {
+export default function BusinessPage({
+  params,
+}: {
+  params: BusinessPageParams
+}) {
   const businessId = params.businessId
   const business = businesses[businessId]
 
