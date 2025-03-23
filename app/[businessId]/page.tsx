@@ -1,6 +1,7 @@
 import { businesses } from "@/lib/businesses"
 import { notFound } from "next/navigation"
 import BusinessPageClient from "./BusinessPageClient"
+import type { Metadata } from "next"
 
 export function generateStaticParams() {
   return Object.keys(businesses).map((id) => ({
@@ -8,7 +9,13 @@ export function generateStaticParams() {
   }))
 }
 
-export function generateMetadata({ params }: { params: { businessId: string } }) {
+type Props = {
+  params: {
+    businessId: string
+  }
+}
+
+export function generateMetadata({ params }: Props): Metadata {
   const businessId = params.businessId
   const business = businesses[businessId]
 
@@ -24,7 +31,7 @@ export function generateMetadata({ params }: { params: { businessId: string } })
   }
 }
 
-export default function BusinessPage({ params }: { params: { businessId: string } }) {
+export default function BusinessPage({ params }: Props) {
   const businessId = params.businessId
   const business = businesses[businessId]
 
