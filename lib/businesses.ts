@@ -1,28 +1,7 @@
-import {
-  ShoppingCart,
-  Heart,
-  Calendar,
-  Gift,
-  MapPin,
-  Phone,
-  Mail,
-  Instagram,
-  ExternalLink,
-  FileText,
-  Briefcase,
-  Users,
-  MessageSquare,
-  CreditCard,
-  Car,
-  Wrench,
-  Award,
-} from "lucide-react"
-import type { LucideIcon } from "lucide-react"
-
 export type BusinessLink = {
   title: string
   url: string
-  icon: LucideIcon
+  icon: string // Changed from LucideIcon to string
   color: string
 }
 
@@ -41,7 +20,7 @@ export const businesses: Record<string, Business> = {
   "county-florist": {
     id: "county-florist",
     name: "County Florist",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "https://placehold.co/200x200/fb7185/ffffff?text=CF",
     description: "Beautiful floral arrangements for all occasions",
     backgroundColor: "bg-gradient-to-br from-rose-400 via-pink-300 to-rose-200",
     textColor: "text-rose-900",
@@ -49,49 +28,49 @@ export const businesses: Record<string, Business> = {
       {
         title: "Shop Flowers Online",
         url: "https://countyflorist.com/shop",
-        icon: ShoppingCart,
+        icon: "ShoppingCart",
         color: "bg-rose-500 hover:bg-rose-600",
       },
       {
         title: "Wedding & Event Services",
         url: "https://countyflorist.com/weddings",
-        icon: Heart,
+        icon: "Heart",
         color: "bg-pink-500 hover:bg-pink-600",
       },
       {
         title: "Book a Consultation",
         url: "https://countyflorist.com/consultation",
-        icon: Calendar,
+        icon: "Calendar",
         color: "bg-fuchsia-500 hover:bg-fuchsia-600",
       },
       {
         title: "Special Occasion Gifts",
         url: "https://countyflorist.com/gifts",
-        icon: Gift,
+        icon: "Gift",
         color: "bg-purple-500 hover:bg-purple-600",
       },
       {
         title: "Our Location",
         url: "https://maps.google.com/?q=County+Florist",
-        icon: MapPin,
+        icon: "MapPin",
         color: "bg-emerald-500 hover:bg-emerald-600",
       },
       {
         title: "Call Us",
         url: "tel:+1234567890",
-        icon: Phone,
+        icon: "Phone",
         color: "bg-blue-500 hover:bg-blue-600",
       },
       {
         title: "Email Us",
         url: "mailto:hello@countyflorist.com",
-        icon: Mail,
+        icon: "Mail",
         color: "bg-indigo-500 hover:bg-indigo-600",
       },
       {
         title: "Follow Us on Instagram",
         url: "https://instagram.com/countyflorist",
-        icon: Instagram,
+        icon: "Instagram",
         color: "bg-pink-500 hover:bg-pink-600",
       },
     ],
@@ -99,7 +78,7 @@ export const businesses: Record<string, Business> = {
   sleephacker: {
     id: "sleephacker",
     name: "SleepHacker",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "https://placehold.co/200x200/22c55e/ffffff?text=SH",
     description: "Better sleep for a better life",
     backgroundColor: "bg-gradient-to-br from-green-500 to-black",
     textColor: "text-white",
@@ -107,37 +86,37 @@ export const businesses: Record<string, Business> = {
       {
         title: "Official Website",
         url: "https://sleephacker.com",
-        icon: ExternalLink,
+        icon: "ExternalLink",
         color: "bg-green-600 hover:bg-green-700",
       },
       {
         title: "Shop Sleep Products",
         url: "https://sleephacker.com/shop",
-        icon: ShoppingCart,
+        icon: "ShoppingCart",
         color: "bg-green-700 hover:bg-green-800",
       },
       {
         title: "Sleep Tips Newsletter",
         url: "https://sleephacker.com/newsletter",
-        icon: Mail,
+        icon: "Mail",
         color: "bg-green-800 hover:bg-green-900",
       },
       {
         title: "Sleep Consultation",
         url: "https://sleephacker.com/consultation",
-        icon: Calendar,
+        icon: "Calendar",
         color: "bg-green-600 hover:bg-green-700",
       },
       {
         title: "Sleep Blog",
         url: "https://sleephacker.com/blog",
-        icon: FileText,
+        icon: "FileText",
         color: "bg-green-700 hover:bg-green-800",
       },
       {
         title: "Follow on Instagram",
         url: "https://instagram.com/sleephacker",
-        icon: Instagram,
+        icon: "Instagram",
         color: "bg-green-800 hover:bg-green-900",
       },
     ],
@@ -145,7 +124,7 @@ export const businesses: Record<string, Business> = {
   "stamford-car-buyer": {
     id: "stamford-car-buyer",
     name: "Stamford Car Buyer",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "https://placehold.co/200x200/6366f1/ffffff?text=SCB",
     description: "Get the best price for your vehicle",
     backgroundColor: "bg-gradient-to-br from-indigo-500 via-purple-400 to-white",
     textColor: "text-indigo-900",
@@ -153,43 +132,43 @@ export const businesses: Record<string, Business> = {
       {
         title: "Sell Your Car",
         url: "https://stamfordcarbuyer.com/sell",
-        icon: Car,
+        icon: "Car",
         color: "bg-indigo-600 hover:bg-indigo-700",
       },
       {
         title: "Get a Free Quote",
         url: "https://stamfordcarbuyer.com/quote",
-        icon: CreditCard,
+        icon: "CreditCard",
         color: "bg-purple-600 hover:bg-purple-700",
       },
       {
         title: "How It Works",
         url: "https://stamfordcarbuyer.com/process",
-        icon: Wrench,
+        icon: "Wrench",
         color: "bg-violet-600 hover:bg-violet-700",
       },
       {
         title: "Our Location",
         url: "https://maps.google.com/?q=Stamford+Car+Buyer",
-        icon: MapPin,
+        icon: "MapPin",
         color: "bg-indigo-600 hover:bg-indigo-700",
       },
       {
         title: "Call Us",
         url: "tel:+1234567890",
-        icon: Phone,
+        icon: "Phone",
         color: "bg-purple-600 hover:bg-purple-700",
       },
       {
         title: "Email Us",
         url: "mailto:info@stamfordcarbuyer.com",
-        icon: Mail,
+        icon: "Mail",
         color: "bg-violet-600 hover:bg-violet-700",
       },
       {
         title: "Customer Reviews",
         url: "https://stamfordcarbuyer.com/reviews",
-        icon: Award,
+        icon: "Award",
         color: "bg-indigo-600 hover:bg-indigo-700",
       },
     ],
@@ -197,7 +176,7 @@ export const businesses: Record<string, Business> = {
   pitch: {
     id: "pitch",
     name: "Pitch",
-    logo: "/placeholder.svg?height=200&width=200",
+    logo: "https://placehold.co/200x200/111827/ffffff?text=P",
     description: "Professional business consulting services",
     backgroundColor: "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-900",
     textColor: "text-white",
@@ -205,37 +184,37 @@ export const businesses: Record<string, Business> = {
       {
         title: "Our Services",
         url: "https://pitchconsulting.com/services",
-        icon: Briefcase,
+        icon: "Briefcase",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
       {
         title: "Book a Consultation",
         url: "https://pitchconsulting.com/consultation",
-        icon: Calendar,
+        icon: "Calendar",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
       {
         title: "Case Studies",
         url: "https://pitchconsulting.com/case-studies",
-        icon: FileText,
+        icon: "FileText",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
       {
         title: "Meet Our Team",
         url: "https://pitchconsulting.com/team",
-        icon: Users,
+        icon: "Users",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
       {
         title: "Contact Us",
         url: "https://pitchconsulting.com/contact",
-        icon: MessageSquare,
+        icon: "MessageSquare",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
       {
         title: "Follow on Instagram",
         url: "https://instagram.com/pitchconsulting",
-        icon: Instagram,
+        icon: "Instagram",
         color: "bg-gray-800 hover:bg-gray-900 border border-gray-700",
       },
     ],

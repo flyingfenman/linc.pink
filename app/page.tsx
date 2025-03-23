@@ -95,17 +95,6 @@ export default function Home() {
               background = "linear-gradient(135deg, #111827, #374151, #111827)"
             }
 
-            // Generate initials for fallback
-            const getInitials = (name: string) => {
-              return name
-                .split(" ")
-                .map((word) => word[0])
-                .join("")
-                .toUpperCase()
-            }
-
-            const initials = getInitials(business.name)
-
             return (
               <Link
                 key={business.id}
@@ -164,21 +153,15 @@ export default function Home() {
                         overflow: "hidden",
                       }}
                     >
-                      {/* Display initials if image fails to load */}
-                      <div
+                      <img
+                        src={business.logo || "/placeholder.svg"}
+                        alt={`${business.name} logo`}
                         style={{
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
                           width: "80%",
                           height: "80%",
-                          fontSize: "1.5rem",
-                          fontWeight: "bold",
-                          color: business.id === "sleephacker" || business.id === "pitch" ? "white" : "#1f2937",
+                          objectFit: "contain",
                         }}
-                      >
-                        {initials}
-                      </div>
+                      />
                     </div>
                     <div style={{ flex: 1 }}>
                       <h2

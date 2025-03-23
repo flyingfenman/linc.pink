@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { ArrowUpRight, Home } from "lucide-react"
-import React from "react"
 import type { Business } from "@/lib/businesses"
+import * as LucideIcons from "lucide-react"
 
 export default function BusinessPageClient({ business }: { business: Business }) {
   // Special styling for dark themes (SleepHacker and Pitch)
@@ -21,16 +21,12 @@ export default function BusinessPageClient({ business }: { business: Business })
 
   const textColor = isDarkTheme ? "#ffffff" : "#9f1239"
 
-  // Generate initials for fallback
-  const getInitials = (name: string) => {
-    return name
-      .split(" ")
-      .map((word) => word[0])
-      .join("")
-      .toUpperCase()
+  // Helper function to get the icon component
+  const getIconComponent = (iconName: string) => {
+    // @ts-ignore - We know these icons exist in lucide-react
+    const Icon = LucideIcons[iconName] || LucideIcons.Link
+    return <Icon size={20} />
   }
-
-  const initials = getInitials(business.name)
 
   return (
     <main
@@ -74,21 +70,15 @@ export default function BusinessPageClient({ business }: { business: Business })
               overflow: "hidden",
             }}
           >
-            {/* Display initials if image fails to load */}
-            <div
+            <img
+              src={business.logo || "/placeholder.svg"}
+              alt={`${business.name} logo`}
               style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
                 width: "80%",
                 height: "80%",
-                fontSize: "2rem",
-                fontWeight: "bold",
-                color: isDarkTheme ? "white" : "#1f2937",
+                objectFit: "contain",
               }}
-            >
-              {initials}
-            </div>
+            />
           </div>
           <h1
             style={{
@@ -188,7 +178,7 @@ export default function BusinessPageClient({ business }: { business: Business })
                   }}
                 >
                   <span style={{ display: "flex", alignItems: "center" }}>
-                    <span style={{ marginRight: "0.75rem" }}>{React.createElement(link.icon, { size: 20 })}</span>
+                    <span style={{ marginRight: "0.75rem" }}>{getIconComponent(link.icon)}</span>
                     {link.title}
                   </span>
                   <ArrowUpRight size={16} />
