@@ -1,10 +1,19 @@
 "use client"
 
+import type React from "react"
+
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import { businesses } from "@/lib/businesses"
 
 export default function Home() {
+  // Function to handle image loading errors
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>, businessName: string) => {
+    const target = e.target as HTMLImageElement
+    target.onerror = null // Prevent infinite loop
+    target.src = `/placeholder.svg?height=200&width=200&text=${businessName.charAt(0)}${businessName.split(" ")[1]?.charAt(0) || ""}`
+  }
+
   return (
     <main
       style={{
@@ -159,8 +168,9 @@ export default function Home() {
                         style={{
                           width: "80%",
                           height: "80%",
-                          objectFit: "contain",
+                          objectFit: "cover",
                         }}
+                        onError={(e) => handleImageError(e, business.name)}
                       />
                     </div>
                     <div style={{ flex: 1 }}>

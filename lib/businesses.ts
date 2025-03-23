@@ -1,7 +1,7 @@
 export type BusinessLink = {
   title: string
   url: string
-  icon: string // Changed from LucideIcon to string
+  icon: string
   color: string
 }
 
@@ -20,7 +20,7 @@ export const businesses: Record<string, Business> = {
   "county-florist": {
     id: "county-florist",
     name: "County Florist",
-    logo: "https://placehold.co/200x200/fb7185/ffffff?text=CF",
+    logo: "https://pub-3c670c54e508407b867016eb6efec600.r2.dev/slideshow5.jpg",
     description: "Beautiful floral arrangements for all occasions",
     backgroundColor: "bg-gradient-to-br from-rose-400 via-pink-300 to-rose-200",
     textColor: "text-rose-900",
@@ -78,7 +78,7 @@ export const businesses: Record<string, Business> = {
   sleephacker: {
     id: "sleephacker",
     name: "SleepHacker",
-    logo: "https://placehold.co/200x200/22c55e/ffffff?text=SH",
+    logo: "https://pub-3c670c54e508407b867016eb6efec600.r2.dev/Screenshot%202025-03-10%20at%2015.57.37.png",
     description: "Better sleep for a better life",
     backgroundColor: "bg-gradient-to-br from-green-500 to-black",
     textColor: "text-white",
@@ -124,7 +124,7 @@ export const businesses: Record<string, Business> = {
   "stamford-car-buyer": {
     id: "stamford-car-buyer",
     name: "Stamford Car Buyer",
-    logo: "https://placehold.co/200x200/6366f1/ffffff?text=SCB",
+    logo: "https://pub-3c670c54e508407b867016eb6efec600.r2.dev/Stamford_Car_Buyer-transformed.jpeg",
     description: "Get the best price for your vehicle",
     backgroundColor: "bg-gradient-to-br from-indigo-500 via-purple-400 to-white",
     textColor: "text-indigo-900",
@@ -176,7 +176,7 @@ export const businesses: Record<string, Business> = {
   pitch: {
     id: "pitch",
     name: "Pitch",
-    logo: "https://placehold.co/200x200/111827/ffffff?text=P",
+    logo: "https://pub-3c670c54e508407b867016eb6efec600.r2.dev/logo.png",
     description: "Professional business consulting services",
     backgroundColor: "bg-gradient-to-br from-gray-900 via-gray-700 to-gray-900",
     textColor: "text-white",

@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { ArrowUpRight, Home } from "lucide-react"
+import type React from "react"
 import type { Business } from "@/lib/businesses"
 import * as LucideIcons from "lucide-react"
 
@@ -26,6 +27,13 @@ export default function BusinessPageClient({ business }: { business: Business })
     // @ts-ignore - We know these icons exist in lucide-react
     const Icon = LucideIcons[iconName] || LucideIcons.Link
     return <Icon size={20} />
+  }
+
+  // Function to handle image loading errors
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const target = e.target as HTMLImageElement
+    target.onerror = null // Prevent infinite loop
+    target.src = `/placeholder.svg?height=200&width=200&text=${business.name.charAt(0)}${business.name.split(" ")[1]?.charAt(0) || ""}`
   }
 
   return (
@@ -74,10 +82,12 @@ export default function BusinessPageClient({ business }: { business: Business })
               src={business.logo || "/placeholder.svg"}
               alt={`${business.name} logo`}
               style={{
-                width: "80%",
-                height: "80%",
-                objectFit: "contain",
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                borderRadius: "9999px",
               }}
+              onError={handleImageError}
             />
           </div>
           <h1
